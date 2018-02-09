@@ -81,6 +81,21 @@ class CalculatorScreen extends Component {
     return views;
   }
 
+  _onInputButtonPressed(input) {
+    switch (typeof input) {
+        case 'number':
+            return this._handleNumberInput(input)
+    }
+  }
+
+  _handleNumberInput(num) {
+    let inputValue = (this.state.inputValue * 10) + num;
+
+    this.setState({
+        inputValue: inputValue
+    })
+  }
+
 }
 
 const mapStateToProps = (state) => {
