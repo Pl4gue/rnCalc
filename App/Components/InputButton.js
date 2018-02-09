@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types';
-import { View, Text } from 'react-native'
+import { TouchableOpacity, Text } from 'react-native'
+
 import styles from './Styles/InputButtonStyle'
 
 export default class InputButton extends Component {
@@ -15,11 +16,11 @@ export default class InputButton extends Component {
   //   someSetting: false
   // }
 
-  render () {
+  render() {
     return (
-      <View style={styles.container}>
-        <Text>InputButton Component</Text>
-      </View>
+        <TouchableOpacity style={styles.inputButton}>
+            <Text style={styles.inputButtonText}>{this.props.value}</Text>
+        </TouchableOpacity>
     )
   }
 }
