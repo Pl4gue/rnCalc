@@ -16,7 +16,14 @@ const inputButtons = [
 ];
 
 class CalculatorScreen extends Component {
-
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+        inputValue: 0
+    }
+  }
+  
   render () {
     return (
       <View style={styles.rootContainer}>
