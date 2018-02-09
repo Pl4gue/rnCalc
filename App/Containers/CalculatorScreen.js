@@ -42,7 +42,7 @@ class CalculatorScreen extends Component {
             if(input == 'Back') {
               inputRow.push(
                 <TouchableOpacity style={styles.inputButton} key={r + "-" + i}
-                  onPress={() => {this.props.navigation.navigate('LaunchScreen')}}>
+                  onPress={() => {this.props.navigation.goBack()}}>
                     <Text style={styles.inputButtonText}>
                       {input}
                     </Text>
