@@ -12,7 +12,7 @@ export default StyleSheet.create({
   },
 
   displayContainer: {
-    flex: 2,
+    flex: 2.5,
     backgroundColor: '#193441',
     justifyContent: 'center'
   },
@@ -26,7 +26,7 @@ export default StyleSheet.create({
   },
 
   inputContainer: {
-    flex: 8,
+    flex: 7.5,
     backgroundColor: '#3E606F'
   },
 
