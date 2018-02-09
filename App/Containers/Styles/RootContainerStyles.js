@@ -3,12 +3,13 @@ import {Fonts, Metrics, Colors} from '../../Themes/'
 
 export default StyleSheet.create({
   applicationView: {
-    flex: 1
+    flex: 1,
+    backgroundColor: Colors.black
   },
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: Colors.background
+    backgroundColor: Colors.black
   },
   welcome: {
     fontSize: 20,
