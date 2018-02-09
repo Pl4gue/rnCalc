@@ -19,10 +19,11 @@ export default StyleSheet.create({
 
   displayText: {
     color: 'white',
-    fontSize: 38,
+    fontSize: 68,
     fontWeight: 'bold',
     textAlign: 'right',
-    padding: 20
+    paddingRight: 18,
+    paddingTop: 12
   },
 
   inputContainer: {
