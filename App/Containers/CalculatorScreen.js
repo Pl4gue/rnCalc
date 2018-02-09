@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
-
-import InputButton from './../Components/InputButton';
 
 // Styles
 import styles from './Styles/CalculatorScreenStyle'
+import buttonStyles from './../Components/Styles/InputButtonStyle'
 
 // Define the input buttons that will be displayed in the calculator.
 const inputButtons = [
   [1, 2, 3, '/'],
   [4, 5, 6, '*'],
   [7, 8, 9, '-'],
-  [0, '.', '=', '+']
+  [0, '.', '=', '+'],
+  ['C', 'CE', 'Ans', 'Back']
 ];
 
 class CalculatorScreen extends Component {
@@ -39,10 +39,24 @@ class CalculatorScreen extends Component {
         let inputRow = [];
         for (var i = 0; i < row.length; i ++) {
             let input = row[i];
-
-            inputRow.push(
-                <InputButton value={input} key={r + "-" + i} />
-            );
+            if(input == 'Back') {
+              inputRow.push(
+                <TouchableOpacity style={styles.inputButton} key={r + "-" + i}
+                  onPress={() => {this.props.navigation.navigate('LaunchScreen')}}>
+                    <Text style={styles.inputButtonText}>
+                      {input}
+                    </Text>
+                </TouchableOpacity>
+              );
+            } else {
+              inputRow.push(
+                <TouchableOpacity style={styles.inputButton} key={r + "-" + i}>
+                    <Text style={styles.inputButtonText}>
+                      {input}
+                    </Text>
+                </TouchableOpacity>
+              );  
+            }
         }
 
         views.push(<View style={styles.inputRow} key={"row-" + r}>{inputRow}</View>)
