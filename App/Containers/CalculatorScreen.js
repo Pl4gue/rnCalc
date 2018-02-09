@@ -23,11 +23,15 @@ class CalculatorScreen extends Component {
         inputValue: 0
     }
   }
-  
+
   render () {
     return (
       <View style={styles.rootContainer}>
-          <View style={styles.displayContainer}></View>
+          <View style={styles.displayContainer}>
+            <Text style={styles.displayText}>
+              {this.state.inputValue}
+            </Text>
+          </View>
           <View style={styles.inputContainer}>
             {this._renderInputButtons()}
           </View>
