@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableHighlight } from 'react-native'
 import { connect } from 'react-redux'
 
 // Styles
@@ -16,6 +16,7 @@ const inputButtons = [
 ];
 
 class CalculatorScreen extends Component {
+
   render () {
     return (
       <View style={styles.rootContainer}>
@@ -41,20 +42,24 @@ class CalculatorScreen extends Component {
             let input = row[i];
             if(input == 'Back') {
               inputRow.push(
-                <TouchableOpacity style={styles.inputButton} key={r + "-" + i}
-                  onPress={() => {this.props.navigation.goBack()}}>
+                <TouchableHighlight style={styles.inputButton} 
+                                    key={r + "-" + i}
+                                    onPress={() => {this.props.navigation.goBack()}}>
                     <Text style={styles.inputButtonText}>
                       {input}
                     </Text>
-                </TouchableOpacity>
+                </TouchableHighlight>
               );
             } else {
               inputRow.push(
-                <TouchableOpacity style={styles.inputButton} key={r + "-" + i}>
+                <TouchableHighlight style={styles.inputButton} 
+                                    key={r + "-" + i}
+                                    underlayColor="#193441"
+                                    onPress={() => {alert(input)}}>
                     <Text style={styles.inputButtonText}>
                       {input}
                     </Text>
-                </TouchableOpacity>
+                </TouchableHighlight>
               );  
             }
         }
