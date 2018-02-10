@@ -19,10 +19,14 @@ class CalculatorScreen extends Component {
   constructor(props) {
     super(props);
     
-    this.state = {
-        inputValue: 0
+    this.initialState = {
+      previousInputValue: 0,
+      inputValue: 0,
+      selectedSymbol: null
+    };
+
+    this.state = this.initialState;
     }
-  }
 
   render () {
     return (
@@ -85,6 +89,8 @@ class CalculatorScreen extends Component {
     switch (typeof input) {
         case 'number':
             return this._handleNumberInput(input)
+        case 'string':
+            return this._handleStringInput(input)
     }
   }
 
@@ -94,6 +100,21 @@ class CalculatorScreen extends Component {
         inputValue: inputValue
     });
   }
+
+  _handleStringInput(str) {
+    switch (str) {
+        case '/':
+        case '*':
+        case '+':
+        case '-':
+            this.setState({
+                selectedSymbol: str,
+                previousInputValue: this.state.inputValue,
+                inputValue: 0
+            });
+            break;
+    }
+}
 
 }
 
