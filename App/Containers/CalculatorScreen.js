@@ -103,18 +103,46 @@ class CalculatorScreen extends Component {
 
   _handleStringInput(str) {
     switch (str) {
-        case '/':
-        case '*':
-        case '+':
-        case '-':
-            this.setState({
-                selectedSymbol: str,
-                previousInputValue: this.state.inputValue,
-                inputValue: 0
-            });
-            break;
+      case '/':
+      case '*':
+      case '+':
+      case '-':
+        this.setState({
+          selectedSymbol: str,
+          previousInputValue: this.state.inputValue,
+          inputValue: 0
+        });
+        break;
+
+      case '=':
+        let symbol = this.state.selectedSymbol,
+          inputValue = this.state.inputValue,
+          previousInputValue = this.state.previousInputValue;
+
+        if (!symbol) {
+          return;
+        }
+
+        this.setState({
+          previousInputValue: 0,
+          inputValue: eval(previousInputValue + symbol + inputValue),
+          selectedSymbol: null
+        });
+        break;
+
+      case 'ce':
+        this.setState(this.initialState);
+        break;
+
+      case 'c':
+        this.setState({
+          inputValue: 0
+        });
+        break;
+
     }
-}
+  }
+
 
 }
 
