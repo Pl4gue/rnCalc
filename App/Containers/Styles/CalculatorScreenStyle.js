@@ -19,7 +19,7 @@ export default StyleSheet.create({
 
   displayText: {
     color: 'white',
-    fontSize: 68,
+    fontSize: 58,
     fontWeight: 'bold',
     textAlign: 'right',
     paddingRight: 18,
