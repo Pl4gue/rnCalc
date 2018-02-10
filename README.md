@@ -1,4 +1,4 @@
-#  rnCalc
+#  rnCalc - A Calculator built in React Native
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
 [![mit-license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
