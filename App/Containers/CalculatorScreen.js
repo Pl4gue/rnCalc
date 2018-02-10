@@ -66,7 +66,7 @@ class CalculatorScreen extends Component {
                 <TouchableHighlight style={styles.inputButton} 
                                     key={r + "-" + i}
                                     underlayColor="#193441"
-                                    onPress={() => {alert(input)}}>
+                                    onPress={() => this._onInputButtonPressed(input)}>
                     <Text style={styles.inputButtonText}>
                       {input}
                     </Text>
@@ -90,10 +90,9 @@ class CalculatorScreen extends Component {
 
   _handleNumberInput(num) {
     let inputValue = (this.state.inputValue * 10) + num;
-
     this.setState({
         inputValue: inputValue
-    })
+    });
   }
 
 }
